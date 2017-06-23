@@ -3,6 +3,7 @@
 namespace CompanyBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Worker
@@ -30,13 +31,19 @@ class Worker
     /**
      * @var string
      *
+     * @Assert\NotBlank()
+     * @Assert\Type("string")
      * @ORM\Column(name="name", type="string", length=50)
      */
     private $name;
 
     /**
      * @var int
-     *
+     * @Assert\NotBlank()
+     * @Assert\Type(
+     *     type="integer",
+     *     message="The value {{ value }} is not a valid {{ type }}."
+     * )
      * @ORM\Column(name="age", type="integer")
      */
     private $age;

@@ -3,7 +3,7 @@
 namespace CompanyBundle\Form\Type;
 
 use CompanyBundle\Entity\Company;
-use function Sodium\add;
+//use function Sodium\add;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;

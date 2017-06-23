@@ -71,6 +71,11 @@ class Company
     private $status;
 
 
+    public function getWorkers()
+    {
+        return $this->workers;
+    }
+
     /**
      * Get id
      *

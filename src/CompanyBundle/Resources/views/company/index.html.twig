@@ -5,9 +5,30 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        td {
+            padding: 5px;
+        }
+        .company {
+            background-color: #e7e7e7;
+            font-weight: bold;
+        }
+    </style>
     <title>CompanyWorkers</title>
 </head>
 <body>
-
+    <a href="worker/add">Add Worker</a>
+    <table border="1">
+    {% for company in companies %}
+        <tr>
+            <td class="company">Компания: {{ company.name }}</td>
+        </tr>
+        {% for worker in company.getWorkers() %}
+            <tr>
+                <td class="worker"><a href="worker/update/{{ worker.id }}">{{ worker.name }}</a></td>
+            </tr>
+        {% endfor %}
+    {% endfor %}
+    </table>
 </body>
 </html>
