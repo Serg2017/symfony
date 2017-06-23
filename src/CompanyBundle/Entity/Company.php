@@ -4,6 +4,7 @@ namespace CompanyBundle\Entity;
 
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Company
@@ -13,6 +14,16 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Company
 {
+    /**
+     * @ORM\OneToMany(targetEntity="Product", mappedBy="category")
+     */
+    private $workers;
+
+    public function __construct()
+    {
+        $this->workers = new ArrayCollection();
+    }
+
     /**
      * @var int
      *
