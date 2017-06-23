@@ -1,0 +1,13 @@
+company:
+    resource: "@CompanyBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+main:
+    resource: "@MainBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

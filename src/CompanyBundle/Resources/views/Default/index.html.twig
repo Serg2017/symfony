@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            width: 960px;
+            margin: 0 auto;
+        }
+
+        th,td {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="content">
+        <a href="/company/add">Add Company</a>
+        <table border="1">
+            <tr>
+                <th>CompanyName</th>
+                <th>description</th>
+                <th>telephone</th>
+                <th>amountWorker</th>
+                <th>status</th>
+                <th>update</th>
+                <th>delete</th>
+            </tr>
+            {% for company in companies %}
+                <tr>
+                    <td>{{ company.name }}</td>
+                    <td>{{ company.description }}</td>
+                    <td>{{ company.telephone }}</td>
+                    <td>{{ company.amountWorker }}</td>
+                    <td>{{ company.status }}</td>
+                    <td><a  href="company/update/{{ company.id }}">Update</td>
+                    <td><a href="company/delete/{{ company.id }}">Delete</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
