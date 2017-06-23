@@ -15,7 +15,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 class Company
 {
     /**
-     * @ORM\OneToMany(targetEntity="Product", mappedBy="category")
+     * @ORM\OneToMany(targetEntity="Worker", mappedBy="company")
      */
     private $workers;
 
